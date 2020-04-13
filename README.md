@@ -1,6 +1,6 @@
 ![tautulli](https://raw.githubusercontent.com/Tautulli/Tautulli-Docker/master/img/logo-tautulli-docker.png)
 
-### See [Tautulli/Tautulli-Docker](https://github.com/Tautulli/Tautulli-Docker) for the actually Tautulli Docker repository.
+### See [tautulli/tautulli](https://hub.docker.com/r/tautulli/tautulli) on DockerHub for the actual Tautulli Docker image.
 
 ---
 

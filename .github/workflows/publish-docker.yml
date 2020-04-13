@@ -2,6 +2,9 @@ name: Publish Docker
 on:
   push:
     branches: [master, beta, nightly]
+    paths:
+      - '.github/workflows/**'
+      - 'Dockerfile'
 jobs:
   build:
     runs-on: ubuntu-latest
