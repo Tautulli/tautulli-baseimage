@@ -1,4 +1,4 @@
-FROM python:2.7.17-slim
+FROM python:3.8.2-slim
 
 LABEL maintainer="Tautulli"
 
