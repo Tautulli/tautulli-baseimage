@@ -4,7 +4,7 @@
 
 ---
 
-This repository is for the Tautulli Docker base image built on `python:2.7.17-slim` with `pycrytodomex` and `pyopenssl` included.
+This repository is for the Tautulli Docker base image built on `python:3.8.6-slim` with `pycrytodomex` and `pyopenssl` included.
 
 [![Python](https://img.shields.io/badge/python-v2.7.17-blue?style=flat-square)](https://python.org/downloads/release/python-2717/)
 [![Docker Pulls](https://img.shields.io/docker/pulls/tautulli/tautulli-baseimage?style=flat-square)](https://hub.docker.com/r/tautulli/tautulli-baseimage)
