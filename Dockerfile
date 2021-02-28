@@ -8,13 +8,10 @@ RUN \
     build-essential libssl-dev libffi-dev \
     curl \
     gosu && \
-  curl https://sh.rustup.rs -sSf | sh -s -- -y && \
-  export PATH="/root/.cargo/bin:${PATH}" && \
   pip install --no-cache-dir --upgrade pip && \
-  pip install --no-cache-dir --upgrade \
+  pip install --no-cache-dir --upgrade --extra-index-url=https://www.piwheels.org/simple \
     pycryptodomex \
     pyopenssl && \
   rm -rf /var/lib/apt/lists/* && \
   apt-get purge -y --auto-remove \
-    build-essential libssl-dev libffi-dev && \
-  rustup self uninstall -y
+    build-essential libssl-dev libffi-dev
