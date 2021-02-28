@@ -9,6 +9,7 @@ RUN \
     curl \
     gosu && \
   curl https://sh.rustup.rs -sSf | sh -s -- -y && \
+  export PATH="/root/.cargo/bin:${PATH}" && \
   pip install --no-cache-dir --upgrade pip && \
   pip install --no-cache-dir --upgrade \
     pycryptodomex \
