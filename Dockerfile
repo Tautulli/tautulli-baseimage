@@ -10,7 +10,8 @@ RUN \
     gosu && \
   pip install --no-cache-dir --upgrade pip && \
   pip install --no-cache-dir --upgrade \ 
-    cryptography==3.3.2 \
+    --extra-index-url https://www.piwheels.org/simple \
+    cryptography \
     pycryptodomex \
     pyopenssl && \
   rm -rf /var/lib/apt/lists/* && \
