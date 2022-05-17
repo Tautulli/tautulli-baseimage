@@ -1,4 +1,5 @@
 name: Publish Docker
+
 on:
   workflow_dispatch: ~
   push:
@@ -7,9 +8,12 @@ on:
       - '.github/workflows/**'
       - 'Dockerfile'
       - 'requirements.txt'
+
 jobs:
   build:
+    name: Build Docker Image
     runs-on: ubuntu-latest
+    if: ${{ !contains(github.event.head_commit.message, '[skip ci]') }}
     steps:
       - name: Checkout Code
         uses: actions/checkout@v2
@@ -36,8 +40,6 @@ jobs:
 
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
-        with:
-          platforms: all
 
       - name: Set up Docker Buildx
         id: buildx
@@ -87,11 +89,29 @@ jobs:
           cache-from: type=local,src=/tmp/.buildx-cache
           cache-to: type=local,dest=/tmp/.buildx-cache
 
+  discord:
+    name: Discord Notification
+    needs: build-docker
+    if: always() && !contains(github.event.head_commit.message, '[skip ci]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Build Job Status
+        uses: technote-space/workflow-conclusion-action@v2.2
+
+      - name: Combine Job Status
+        id: status
+        run: |
+          failures=(neutral, skipped, timed_out, action_required)
+          if [[ ${array[@]} =~ $WORKFLOW_CONCLUSION ]]; then
+            echo ::set-output name=status::failure
+          else
+            echo ::set-output name=status::$WORKFLOW_CONCLUSION
+          fi
+
       - name: Post Status to Discord
         uses: sarisia/actions-status-discord@v1
-        if: always()
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          status: ${{ job.status }}
+          status: ${{ steps.status.outputs.status }}
           title: ${{ github.workflow }}
           nofail: true
