@@ -39,7 +39,7 @@ jobs:
           echo ::set-output name=docker_image::${{ secrets.DOCKER_REPO }}/tautulli-baseimage
 
       - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
+        uses: docker/setup-qemu-action@v2
 
       - name: Set up Docker Buildx
         id: buildx
