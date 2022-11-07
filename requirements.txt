@@ -1,2 +1,2 @@
 pycryptodomex==3.15.0
-pyopenssl==22.0.0
+pyopenssl==22.1.0
