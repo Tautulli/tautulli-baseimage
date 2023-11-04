@@ -1,4 +1,4 @@
 apscheduler==3.10.1
-cryptography==41.0.4
+cryptography==41.0.5
 pycryptodomex==3.19.0
 pyopenssl==23.2.0
