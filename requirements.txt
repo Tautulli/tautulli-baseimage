@@ -1,2 +1,2 @@
-cryptography==46.0.4
+cryptography==46.0.6
 pyopenssl==26.0.0
