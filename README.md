@@ -1,10 +1,10 @@
 ![tautulli](https://raw.githubusercontent.com/Tautulli/Tautulli-Docker/master/img/logo-tautulli-docker.png)
 
-### See [tautulli/tautulli](https://hub.docker.com/r/tautulli/tautulli) on DockerHub for the actual Tautulli Docker image.
+### See the [Tautulli Installation Wiki](https://github.com/Tautulli/Tautulli/wiki/Installation#docker) for instructions on how to install Tautulli using Docker.
 
 ---
 
-This repository is for the Tautulli Docker base image built on `python` with `pycrytodomex` and `pyopenssl` included.
+This repository is for the Tautulli Docker base image built on `python` with `cryptography` and `pyopenssl` included.
 
 [![Python](https://img.shields.io/badge/python-v3.13-blue?style=flat-square)](https://hub.docker.com/_/python)
 [![Docker Pulls](https://img.shields.io/docker/pulls/tautulli/tautulli-baseimage?style=flat-square)](https://hub.docker.com/r/tautulli/tautulli-baseimage)
