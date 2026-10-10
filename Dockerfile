@@ -18,7 +18,6 @@ RUN \
     $BUILD_DEPS && \
   pip install --no-cache-dir --upgrade pip && \
   pip install --no-cache-dir --upgrade \
-    --extra-index-url https://www.piwheels.org/simple \
     -r requirements.txt && \
   if [ -n "$BUILD_DEPS" ]; then apt-get purge -y --auto-remove $BUILD_DEPS; fi && \
   rm requirements.txt && \
